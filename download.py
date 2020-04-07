@@ -27,7 +27,7 @@ def generate_path(url: requests.__url__, title: str, author: str) -> str:
 
 
 def start(subject: str = None, epub: bool = False):
-    folder = os.getcwd() + '/springer-books/'
+    folder = os.getcwd() + '/springer-free-books/'
 
     if not os.path.exists(folder):
         os.mkdir(folder)
