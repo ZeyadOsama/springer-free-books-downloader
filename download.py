@@ -7,7 +7,7 @@ from tqdm import tqdm
 
 def fetch_raw_data() -> pd.DataFrame:
     print('\nFetching data.')
-    books = pd.read_excel('https://resource-cms.springernature.com/springer-cms/rest/v1/content/17858272/data/v3')
+    books = pd.read_excel('https://resource-cms.springernature.com/springer-cms/rest/v1/content/17858272/data/v4')
     books['Subject Classification'] = books['Subject Classification'].str.upper()
     return books
 
@@ -33,7 +33,7 @@ def start(subject: str = None, epub: bool = False):
         os.mkdir(folder)
 
     books = fetch_raw_data()
-    books.to_csv(folder + 'table.csv')
+    books.to_csv(folder + 'books-list.csv')
 
     if subject is not None:
         print('Hello')
